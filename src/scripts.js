@@ -6,7 +6,7 @@ const context = canvas.getContext("2d");
 
 const frameCount = 60;
 const currentFrame = index => (
-    `/img-3/WB_WebsiteScrollTest03_${index.toString().padStart(4, '0')}.jpg`
+    `/img-4/WB_WebsiteScrollTest03_${index.toString().padStart(4, '0')}.jpg`
 
 )
 
@@ -19,8 +19,8 @@ const preloadImages = () => {
 
 const img = new Image()
 img.src = currentFrame(1);
-canvas.width = 1920;
-canvas.height = 1920;
+canvas.width = 960;
+canvas.height = 960;
 img.onload = function () {
     context.drawImage(img, 0, 0);
 }
