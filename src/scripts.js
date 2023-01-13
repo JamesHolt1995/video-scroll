@@ -4,16 +4,18 @@ const html = document.documentElement;
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 
-const frameCount = 60;
+const frameCount = 120;
 const currentFrame = index => (
     `/img-4/WB_WebsiteScrollTest03_${index.toString().padStart(4, '0')}.jpg`
 
 )
 
+const images = [null]
 const preloadImages = () => {
+
     for (let i = 1; i < frameCount; i++) {
-        const img = new Image();
-        img.src = currentFrame(i);
+        images[i] = new Image();
+        images[i].src = currentFrame(i);
     }
     setTimeout(() => {
         window.requestAnimationFrame(step);
@@ -29,8 +31,7 @@ img.onload = function () {
 }
 
 const updateImage = index => {
-    img.src = currentFrame(index);
-    context.drawImage(img, 0, 0);
+    context.drawImage(images[index], 0, 0);
 }
 
 window.addEventListener('scroll', () => {
@@ -43,7 +44,7 @@ window.addEventListener('scroll', () => {
     //     Math.ceil(scrollFraction * frameCount)
     // );
 
-    frameIndex = Math.ceil((scrollTop / 8) % frameCount + 60);
+    frameIndex = Math.ceil((scrollTop / 8) % 60 + 60);
 
     console.clear();
     console.log('scrollTop: ', scrollTop, 'maxScrollTop: ', 'frameIndex: ', frameIndex)
