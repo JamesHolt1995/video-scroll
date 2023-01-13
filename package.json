@@ -1,0 +1,22 @@
+{
+  "name": "scroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.8.2"
+  },
+  "source": "src/index.html",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.2",
+    "gsap": "^3.11.4",
+    "parcel-reporter-static-files-copy": "^1.5.0",
+    "sharp": "^0.31.3"
+  }
+}
