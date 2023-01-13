@@ -15,6 +15,9 @@ const preloadImages = () => {
         const img = new Image();
         img.src = currentFrame(i);
     }
+    setTimeout(() => {
+        window.requestAnimationFrame(step);
+    }, 1000);
 };
 
 const img = new Image()
@@ -64,9 +67,7 @@ function step() {
     }
 }
 
-setTimeout(() => {
-    window.requestAnimationFrame(step);
-}, 1000);
+
 const text = document.getElementsByClassName("text");
 
 const tl = gsap.timeline();

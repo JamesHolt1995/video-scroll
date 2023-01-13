@@ -543,6 +543,9 @@ const preloadImages = ()=>{
         const img = new Image();
         img.src = currentFrame(i);
     }
+    setTimeout(()=>{
+        window.requestAnimationFrame(step);
+    }, 1000);
 };
 const img = new Image();
 img.src = currentFrame(1);
@@ -578,9 +581,6 @@ function step() {
         window.requestAnimationFrame(step);
     }, 1000 / fps);
 }
-setTimeout(()=>{
-    window.requestAnimationFrame(step);
-}, 1000);
 const text = document.getElementsByClassName("text");
 const tl = (0, _gsap.gsap).timeline();
 tl.to(".bottle", {
