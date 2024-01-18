@@ -537,7 +537,7 @@ const html = document.documentElement;
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
 const frameCount = 120;
-const currentFrame = (index)=>`/img-4/WB_WebsiteScrollTest03_${index.toString().padStart(4, "0")}.jpg`;
+const currentFrame = (index)=>`/img/WB_WebsiteScrollTest03_${index.toString().padStart(4, "0")}.jpg`;
 const images = [
     null
 ];

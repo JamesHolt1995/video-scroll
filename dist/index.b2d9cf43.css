@@ -11,7 +11,13 @@ body {
   padding: 0;
 }
 
-body .bottle {
+.content {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+}
+
+.bottle {
   z-index: 0;
   height: 100vh;
   width: 100%;
@@ -20,9 +26,27 @@ body .bottle {
   top: 0;
 }
 
-body .text {
+.bottle:before, .bottle:after {
+  content: "";
+  width: 150px;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(270deg, #fff0 0%, #000 100%);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.bottle:after {
+  background: linear-gradient(90deg, #fff0 0%, #000 100%);
+  left: auto;
+  right: 0;
+}
+
+.text {
   opacity: 0;
-  color: #fff;
+  color: #e89f02;
   height: 100vh;
   width: 100vw;
   text-align: center;
@@ -30,7 +54,7 @@ body .text {
   justify-content: center;
   align-items: center;
   margin: 0;
-  font-family: DM Sans, sans-serif;
+  font-family: ivypresto-display, serif;
   font-size: 6rem;
   display: flex;
   position: relative;
@@ -43,13 +67,28 @@ canvas {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-53%, -50%);
+}
+
+canvas:after {
+  content: "";
+  width: 30px;
+  background-color: #00f;
+  display: block;
+  position: relative;
+  top: 0;
+  left: 0;
 }
 
 @media screen and (min-width: 720px) {
+  .bottle {
+    width: 1024px;
+  }
+
   canvas {
     height: auto;
-    width: 100vw;
+    width: 1024px;
+    margin-top: -40px;
   }
 }
 
